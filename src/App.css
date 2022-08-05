@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .width-input-login {
   max-width: 300px;
   margin: auto;
@@ -23,10 +28,15 @@
 .cadastrar {
   color: rgb(74, 73, 72);
   margin-left: 20px;
+  font-size: 1.1em;
   font-weight: 700;
   border-bottom: 1px solid rgb(209, 204, 204);
 }
 
 .cadastrar:hover {
   color: rgb(28, 27, 27);
+}
+
+.min-password {
+  font-size: 0.7em;
 }
