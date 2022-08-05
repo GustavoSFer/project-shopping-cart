@@ -13,8 +13,9 @@ function Login() {
   const handleClick = () => {
     if (isValidEmail(email) && isValidPassword(MIN_PASSWORD_LANGTH, password)) {
       alert('redirecionar para a proxima tela');
+    } else {
+      setMsgErro(true);
     }
-    setMsgErro(true);
   };
 
   return (
