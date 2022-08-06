@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
+import MyContext from '../MyContext/MyContext';
 import { isValidEmail, isValidPassword } from '../Utils/ValidaçãoLogin/ValidacaoLogin';
 import '../App.css';
 
 function Login() {
+  const history = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [msgErro, setMsgErro] = useState(false);
-  const MIN_PASSWORD_LANGTH = 6;
+  const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
 
   const handleClick = () => {
     if (isValidEmail(email) && isValidPassword(MIN_PASSWORD_LANGTH, password)) {
@@ -42,8 +45,8 @@ function Login() {
       </div>
       <p className="txt-cadastro">
         Não possui cadastro?
-        <a href="/cadastro" className="cadastrar"> Cadastrar</a>
       </p>
+      <Button click={() => history('/cadastro')} sty="cadastrar"> Cadastrar</Button>
     </main>
   );
 }
