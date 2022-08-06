@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
 import MyContext from '../MyContext/MyContext';
-import { isValidEmail, isValidPassword } from '../Utils/ValidaçãoLogin/ValidacaoLogin';
+import { isValidEmail, isValidPassword } from '../Utils/Validacao';
 import '../App.css';
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
   const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
 
   const handleClick = () => {
-    if (isValidEmail(email) && isValidPassword(MIN_PASSWORD_LANGTH, password)) {
+    if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
       alert('redirecionar para a proxima tela');
     } else {
       setMsgErro(true);

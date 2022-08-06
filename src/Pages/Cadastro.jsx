@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
 import Input from '../Components/Input';
 import MyContext from '../MyContext/MyContext';
+import {
+  isValidEmail,
+  isValidPassword,
+  isValidName,
+  isValidPhone,
+} from '../Utils/Validacao';
 
 function Cadastro() {
   const history = useNavigate();
@@ -10,10 +16,21 @@ function Cadastro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [msgErro, setMsgErro] = useState(false);
   const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
 
   const handleClick = () => {
-    console.log('cadastrando');
+    if (
+      isValidEmail(email)
+      && isValidPhone(telefone)
+      && isValidPassword(password, MIN_PASSWORD_LANGTH)
+      && isValidName(nome)
+    ) {
+      console.log('ok');
+      setMsgErro(false);
+    } else {
+      setMsgErro(true);
+    }
   };
 
   return (
@@ -52,6 +69,10 @@ function Cadastro() {
             handleChange={(e) => setTelefone(e.target.value)}
             value={telefone}
           />
+          {
+            msgErro
+              && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
+            }
         </div>
         <Button click={handleClick}>Cadastrar</Button>
         <Button click={() => history('/')}>Voltar</Button>
