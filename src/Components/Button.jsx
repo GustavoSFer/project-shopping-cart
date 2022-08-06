@@ -13,9 +13,12 @@ function Button({ children, click, sty }) {
   );
 }
 
-Button.defaultProps = { sty: '' };
+Button.defaultProps = { sty: '', children: '' };
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
   click: PropTypes.func.isRequired,
   sty: PropTypes.string,
 };

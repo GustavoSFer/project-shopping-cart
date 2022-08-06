@@ -93,21 +93,18 @@
     width: 100%;
   }
   .search {
-    font-size: 0.7em;
     height: 30px;
   }
-  .filtar-and-cart {
-    line-height: 60px;
-    height: 30px;
+  .btn-filter-cart {
     width: 30px;
-    margin: 2px;
   }
-  .filtar-and-cart img {
-    width: 80%;
-    margin-left: 6px;
+  
+  .btn-filter-cart img {
+    width: 250%;
   }
-
+  
   .img {
-    width: 110%;
+    width: 20px;
+    margin-bottom: 14px;
   }
 }

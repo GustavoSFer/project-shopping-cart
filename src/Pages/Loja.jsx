@@ -29,17 +29,13 @@ function Loja() {
           </Button>
         </div>
 
-        <div className="d-flex justify-content-between">
-          <div className="filtar-and-cart">
-            <Button click={() => ('fd')} sty="btn-filter-cart">
-              <img src={filtro} alt="filtro" />
-            </Button>
-          </div>
-          <div className="filtar-and-cart">
-            <Button click={() => ('fd')} sty="btn-filter-cart">
-              <img src={carrinho} alt="Carrinho" className="img" />
-            </Button>
-          </div>
+        <div className="d-flex align-items-center">
+          <Button click={() => ('fd')} sty="btn-filter-cart">
+            <img src={filtro} alt="filtro" className="teste" />
+          </Button>
+          <Button click={() => ('fd')} sty="btn-filter-cart">
+            <img src={carrinho} alt="Carrinho" className="teste" />
+          </Button>
         </div>
 
       </div>
