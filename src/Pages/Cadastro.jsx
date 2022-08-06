@@ -28,6 +28,7 @@ function Cadastro() {
     ) {
       console.log('ok');
       setMsgErro(false);
+      history('/loja');
     } else {
       setMsgErro(true);
     }
@@ -74,8 +75,8 @@ function Cadastro() {
               && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
             }
         </div>
-        <Button click={handleClick}>Cadastrar</Button>
-        <Button click={() => history('/')}>Voltar</Button>
+        <Button click={handleClick} sty="w-100">Cadastrar</Button>
+        <Button click={() => history('/')} sty="w-100">Voltar</Button>
       </div>
     </main>
   );

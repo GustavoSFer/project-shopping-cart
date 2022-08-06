@@ -5,7 +5,7 @@ function Button({ children, click, sty }) {
   return (
     <button
       type="button"
-      className={`btn btn-danger w-100 mt-3 ${sty}`}
+      className={`btn btn-danger mt-3 ${sty}`}
       onClick={click}
     >
       {children}
