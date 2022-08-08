@@ -108,6 +108,27 @@
   opacity: 93%;
 }
 
+/* Card Produtos */
+.card-produto {
+  border: 1px solid rgb(223, 219, 219);
+  height: 300px;
+  max-width: 300px;
+  text-align: center;
+}
+.card-produto .title {
+  font-size: 1.2em;
+}
+.card-produto .price {
+  font-size: 1em;
+  font-weight: 900;
+}
+.card-produto .price-color {
+  color: rgb(214, 26, 26);
+  margin: 5px;
+  font-weight: 1000;
+  font-size: 1.2em;
+}
+
 /* Telas pequenas */
 @media only screen and (max-width: 600px) {
   .logo {
@@ -134,5 +155,15 @@
 
   .carrinho-compras {
     width: 90%;
+  }
+  .card-produto .title {
+    font-size: 0.6em;
+  }
+  .card-produto {
+    height: 100%;
+    width: 43%;
+  }
+  .card-produto .price {
+    font-size: 0.6em;
   }
 }
