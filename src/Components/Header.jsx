@@ -5,10 +5,12 @@ import logo from '../imagens/logo.png';
 import carrinho from '../imagens/carrinho-de-mao.png';
 import filtro from '../imagens/filter.png';
 import lupa from '../imagens/lupa.png';
+import Carrinho from './Carrinho';
 
 function Header() {
   const [pesquisar, setPesquisar] = useState('');
   const [ativarFiltro, setAtivarFiltro] = useState(false);
+  const [ativarCarrinho, setAtivarCarrinho] = useState(false);
   const [filter, setFilter] = useState(0);
 
   return (
@@ -36,7 +38,7 @@ function Header() {
           <Button click={() => setAtivarFiltro(!ativarFiltro)} sty="btn-filter-cart">
             <img src={filtro} alt="filtro" className="teste" />
           </Button>
-          <Button click={() => ('fd')} sty="btn-filter-cart">
+          <Button click={() => setAtivarCarrinho(!ativarCarrinho)} sty="btn-filter-cart">
             <img src={carrinho} alt="Carrinho" className="teste" />
           </Button>
         </div>
@@ -118,6 +120,10 @@ function Header() {
 
           </div>
         )
+      }
+
+      {
+        ativarCarrinho && <Carrinho />
       }
 
     </main>

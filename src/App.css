@@ -97,6 +97,17 @@
   font-weight: 800;
 }
 
+/* carrinho de compras */
+.carrinho-compras {
+  border: 1px solid red;
+  position: absolute;
+  right: 0;
+  top: 72px;
+  width: 350px;
+  background-color: rgb(227, 223, 223);
+  opacity: 93%;
+}
+
 /* Telas pequenas */
 @media only screen and (max-width: 600px) {
   .logo {
@@ -119,5 +130,9 @@
   .img {
     width: 20px;
     margin-bottom: 14px;
+  }
+
+  .carrinho-compras {
+    width: 90%;
   }
 }
