@@ -11,6 +11,18 @@ function App() {
     setData(await RequestGetApi('computador'))
   }
 
+  const optionFilter = (filter) => {
+    console.log(filter);
+    if (filter === 'menor') {
+      const option = [...data].sort((a, b) => a.price - b.price);
+      console.log(option);
+      setData(option);
+    } else {
+      const option = [...data].sort((a, b) => b.price - a.price);
+      setData(option);
+    }
+  }
+
   useEffect(() => {
     api()
   },[])
@@ -19,6 +31,7 @@ function App() {
     MIN_PASSWORD_LANGTH,
     data,
     setData,
+    optionFilter,
   }
 
   return (

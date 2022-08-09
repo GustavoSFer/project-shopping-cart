@@ -14,12 +14,12 @@ function Header() {
   const [ativarFiltro, setAtivarFiltro] = useState(false);
   const [ativarCarrinho, setAtivarCarrinho] = useState(false);
   const [filter, setFilter] = useState(0);
-  const { setData } = useContext(MyContext);
+  const { setData, optionFilter } = useContext(MyContext);
 
   const requestApi = async () => {
-    const data = await RequestGetApi(pesquisar);
+    const result = await RequestGetApi(pesquisar);
     console.log(filter);
-    setData(data);
+    setData(result);
   };
 
   return (
@@ -57,10 +57,10 @@ function Header() {
         ativarFiltro && (
           <div className="border border-success d-flex justify-content-evenly">
             <div>
-              <select className="form-select">
+              <select className="form-select" onChange={(e) => optionFilter(e.target.value)}>
                 <option defaultValue="selecione">= Selecionar =</option>
-                <option value="mais barato">Menor preço</option>
-                <option value="mais caro">Maior preço</option>
+                <option value="menor">Menor preço</option>
+                <option value="maior">Maior preço</option>
               </select>
             </div>
 
@@ -77,7 +77,7 @@ function Header() {
                     value="0-50"
                     onChange={(e) => setFilter(e.target.value)}
                   />
-                  Entre 0 e 50,00
+                  Até 50,00
                 </label>
                 <label htmlFor="filterPrice" className="form-check-label">
                   <input
