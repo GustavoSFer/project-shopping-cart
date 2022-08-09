@@ -5,11 +5,10 @@ import RequestGetApi from './RequestApi/RequestApi';
 
 function App() {
   const MIN_PASSWORD_LANGTH = 6
-  const [query, setQuery] = useState('computador')
   const [data, setData] = useState([]);
 
   const api = async () => {
-    setData(await RequestGetApi(query))
+    setData(await RequestGetApi('computador'))
   }
 
   useEffect(() => {
@@ -18,8 +17,8 @@ function App() {
 
   const contextValue = {
     MIN_PASSWORD_LANGTH,
-    setQuery,
     data,
+    setData,
   }
 
   return (

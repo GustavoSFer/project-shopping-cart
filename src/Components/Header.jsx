@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from './Button';
 import Input from './Input';
 import logo from '../imagens/logo.png';
@@ -6,12 +6,21 @@ import carrinho from '../imagens/carrinho-de-mao.png';
 import filtro from '../imagens/filter.png';
 import lupa from '../imagens/lupa.png';
 import Carrinho from './Carrinho';
+import RequestGetApi from '../RequestApi/RequestApi';
+import MyContext from '../MyContext/MyContext';
 
 function Header() {
   const [pesquisar, setPesquisar] = useState('');
   const [ativarFiltro, setAtivarFiltro] = useState(false);
   const [ativarCarrinho, setAtivarCarrinho] = useState(false);
   const [filter, setFilter] = useState(0);
+  const { setData } = useContext(MyContext);
+
+  const requestApi = async () => {
+    const data = await RequestGetApi(pesquisar);
+    console.log(filter);
+    setData(data);
+  };
 
   return (
     <main>
@@ -29,7 +38,7 @@ function Header() {
             value={pesquisar}
             sty="search w-25"
           />
-          <Button click={() => ('fd')} sty="search w-25">
+          <Button click={requestApi} sty="search w-25">
             <img src={lupa} alt="pesquisar" className="img" />
           </Button>
         </div>
@@ -44,7 +53,6 @@ function Header() {
         </div>
 
       </div>
-      {console.log(filter)}
       {
         ativarFiltro && (
           <div className="border border-success d-flex justify-content-evenly">
