@@ -109,11 +109,9 @@
 }
 
 /* Card Produtos */
-.card-produto {
-  border: 1px solid rgb(223, 219, 219);
-  height: 300px;
-  max-width: 300px;
-  text-align: center;
+.card-img {
+  width: 55%;
+  margin: auto;
 }
 .card-produto .title {
   font-size: 1.2em;
@@ -121,6 +119,7 @@
 .card-produto .price {
   font-size: 1em;
   font-weight: 900;
+  margin: 0;
 }
 .card-produto .price-color {
   color: rgb(214, 26, 26);
@@ -156,14 +155,17 @@
   .carrinho-compras {
     width: 90%;
   }
+
   .card-produto .title {
     font-size: 0.6em;
   }
   .card-produto {
-    height: 100%;
     width: 43%;
   }
   .card-produto .price {
-    font-size: 0.6em;
+    font-size: 0.4em;
+  }
+  .addCart {
+    font-size: 0.5em;
   }
 }
