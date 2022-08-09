@@ -109,6 +109,9 @@
 }
 
 /* Card Produtos */
+.card-produto{
+  max-width: 300px;
+}
 .card-img {
   width: 55%;
   margin: auto;

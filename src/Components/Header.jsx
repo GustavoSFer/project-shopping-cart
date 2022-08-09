@@ -10,15 +10,14 @@ import RequestGetApi from '../RequestApi/RequestApi';
 import MyContext from '../MyContext/MyContext';
 
 function Header() {
-  const [pesquisar, setPesquisar] = useState('');
   const [ativarFiltro, setAtivarFiltro] = useState(false);
   const [ativarCarrinho, setAtivarCarrinho] = useState(false);
-  const [filter, setFilter] = useState(0);
-  const { setData, optionFilter } = useContext(MyContext);
+  const {
+    setData, optionFilter, filterValue, setTxtSearch, txtSearch,
+  } = useContext(MyContext);
 
   const requestApi = async () => {
-    const result = await RequestGetApi(pesquisar);
-    console.log(filter);
+    const result = await RequestGetApi(txtSearch);
     setData(result);
   };
 
@@ -34,8 +33,8 @@ function Header() {
           <Input
             type="text"
             name="Pesquisar"
-            handleChange={(e) => setPesquisar(e.target.value)}
-            value={pesquisar}
+            handleChange={(e) => setTxtSearch(e.target.value)}
+            value={txtSearch}
             sty="search w-25"
           />
           <Button click={requestApi} sty="search w-25">
@@ -75,7 +74,7 @@ function Header() {
                     name="filterPrice"
                     className="form-check-input"
                     value="0-50"
-                    onChange={(e) => setFilter(e.target.value)}
+                    onChange={(e) => filterValue(e.target.value)}
                   />
                   Até 50,00
                 </label>
@@ -86,7 +85,7 @@ function Header() {
                     name="filterPrice"
                     className="form-check-input"
                     value="50-100"
-                    onChange={(e) => setFilter(e.target.value)}
+                    onChange={(e) => filterValue(e.target.value)}
                   />
                   Entre 50,00 e 100,00
                 </label>
@@ -97,7 +96,7 @@ function Header() {
                     name="filterPrice"
                     className="form-check-input"
                     value="100-200"
-                    onChange={(e) => setFilter(e.target.value)}
+                    onChange={(e) => filterValue(e.target.value)}
                   />
                   Entre 100,00 e 200,00
                 </label>
@@ -108,7 +107,7 @@ function Header() {
                     name="filterPrice"
                     className="form-check-input"
                     value="200-500"
-                    onChange={(e) => setFilter(e.target.value)}
+                    onChange={(e) => filterValue(e.target.value)}
                   />
                   Entre 200,00 e 500,00
                 </label>
@@ -118,8 +117,8 @@ function Header() {
                     id="filterPrice"
                     name="filterPrice"
                     className="form-check-input"
-                    value="501"
-                    onChange={(e) => setFilter(e.target.value)}
+                    value="500-10000"
+                    onChange={(e) => filterValue(e.target.value)}
                   />
                   Acima de 500
                 </label>
