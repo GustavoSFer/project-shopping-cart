@@ -1,7 +1,7 @@
 import Routers from './Routes';
 import MyContext from './MyContext/MyContext';
 import { useEffect, useState } from 'react';
-import RequestGetApi from './RequestApi/RequestApi';
+import { RequestGetApi } from './RequestApi/RequestApi';
 
 function App() {
   const MIN_PASSWORD_LANGTH = 6;

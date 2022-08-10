@@ -6,7 +6,7 @@ import carrinho from '../imagens/carrinho-de-mao.png';
 import filtro from '../imagens/filter.png';
 import lupa from '../imagens/lupa.png';
 import Carrinho from './Carrinho';
-import RequestGetApi from '../RequestApi/RequestApi';
+import { RequestGetApi } from '../RequestApi/RequestApi';
 import MyContext from '../MyContext/MyContext';
 
 function Header() {
