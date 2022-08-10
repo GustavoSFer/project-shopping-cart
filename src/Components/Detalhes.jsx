@@ -26,6 +26,7 @@ function Detalhes() {
     api();
     setCarrinho(JSON.parse(localStorage.getItem('carrinho')) || []);
   }, []);
+
   return (
     <div>
 
@@ -46,7 +47,7 @@ function Detalhes() {
               </p>
             </div>
           </div>
-          <Button click={() => addCart(produto)} sty="w-50">Adicionar ao carrinho</Button>
+          <Button click={() => addCart(produto)} sty="">Adicionar ao carrinho</Button>
         </div>
       </div>
     </div>

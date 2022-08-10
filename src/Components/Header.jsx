@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <main>
-      <div className="border border-success d-flex justify-content-between height">
+      <div className="shadow-lg d-flex justify-content-between height">
 
         <div className="logo">
           <a href="/loja"><img src={logo} alt="logo" /></a>
