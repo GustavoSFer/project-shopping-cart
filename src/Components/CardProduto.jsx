@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Button from './Button';
+import MyContext from '../MyContext/MyContext';
 
 function CardProduto({ item }) {
+  const { carrinho, setCarrinho } = useContext(MyContext);
+
+  const addCart = (addProduto) => {
+    const filtrarCarrinho = carrinho.filter((produto) => produto.id !== addProduto.id);
+    setCarrinho([...filtrarCarrinho, addProduto]);
+
+    localStorage.setItem('carrinho', JSON.stringify([...filtrarCarrinho, addProduto]));
+  };
+
   return (
     <div className="col card-produto shadow m-2 bg-body rounded card-group">
       <div className="card">
@@ -19,9 +29,10 @@ function CardProduto({ item }) {
             </p>
           </div>
           <div className="card-footer">
-            <Button sty="price">Detalhes</Button>
+            <Button sty="price btn-detalhe">Detalhes</Button>
           </div>
         </Link>
+        <Button click={() => addCart(item)} sty="price btn-carrinho">Carrinho</Button>
       </div>
     </div>
   );

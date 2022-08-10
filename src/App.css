@@ -110,9 +110,10 @@
   z-index: 1;
 }
 .card-carrinho {
-  padding: 5px;
+  padding: 15px;
   width: 90%;
   margin: auto;
+  margin-bottom: 10px;
   border-bottom: 1px solid rgb(194, 187, 187);
 }
 .card-carrinho img {
@@ -136,6 +137,14 @@
 .remover:hover {
   border: none;
 }
+.totalPrice {
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(213, 33, 33);
+  color: white;
+  font-weight: 900;
+}
 
 /* Card Produtos */
 .card-produto{
@@ -152,6 +161,17 @@
   font-size: 1em;
   font-weight: 900;
   margin: 0;
+}
+.btn-detalhe {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+
 }
 .card-produto .price-color {
   color: rgb(214, 26, 26);

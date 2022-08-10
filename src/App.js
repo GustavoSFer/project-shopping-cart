@@ -7,6 +7,7 @@ function App() {
   const MIN_PASSWORD_LANGTH = 6;
   const [data, setData] = useState([]);
   const [txtSearch, setTxtSearch] = useState('');
+  const [carrinho, setCarrinho] = useState([]);
 
   const api = async (query = 'computador') => {
     setData(await RequestGetApi(query))
@@ -44,6 +45,8 @@ function App() {
     filterValue,
     setTxtSearch,
     txtSearch,
+    carrinho,
+    setCarrinho,
   };
 
   return (

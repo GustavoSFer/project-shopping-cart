@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ButtonCart from './ButtonCart';
 
 function Carrinho() {
+  const [totalCarrinho, setTotelCarrinho] = useState(0);
+  const [removido, setRemovido] = useState(false);
   const carrinho = JSON.parse(localStorage.getItem('carrinho'));
+
+  const valorCarrinho = () => {
+    const soma = carrinho.reduce((acc, cur) => acc + cur.price, 0);
+    setTotelCarrinho(soma.toFixed(2));
+  };
 
   const removeProduto = (item) => {
     const filtrarCarrinho = carrinho.filter((produto) => produto.id !== item.id);
     localStorage.setItem('carrinho', JSON.stringify([...filtrarCarrinho]));
+    setRemovido(!removido);
   };
 
+  useEffect(() => {
+    valorCarrinho();
+  }, [removido]);
+
   return (
-    <div className="carrinho-compras">
+    <div className="carrinho-compras p-2">
       {
         carrinho.length > 0
           ? carrinho.map((item) => (
@@ -30,9 +42,11 @@ function Carrinho() {
               </div>
             </div>
           ))
-          : <h1>Sem produtos no carrinho</h1>
+          : <h5>Sem produtos no carrinho</h5>
       }
-
+      <div>
+        <span className="totalPrice">{`Valor Total - R$: ${totalCarrinho}` }</span>
+      </div>
     </div>
   );
 }
