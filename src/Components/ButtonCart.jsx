@@ -5,7 +5,7 @@ function ButtonCart({ children, click, sty }) {
   return (
     <button
       type="button"
-      className={`btn btn-danger ${sty}`}
+      className={`${sty}`}
       onClick={click}
     >
       {children}
