@@ -8,6 +8,8 @@ function App() {
   const [data, setData] = useState([]);
   const [txtSearch, setTxtSearch] = useState('');
   const [carrinho, setCarrinho] = useState([]);
+  const [ativarCarrinho, setAtivarCarrinho] = useState(false);
+
 
   const api = async (query = 'computador') => {
     setData(await RequestGetApi(query))
@@ -39,14 +41,12 @@ function App() {
 
   const contextValue = {
     MIN_PASSWORD_LANGTH,
-    data,
-    setData,
+    data, setData,
     optionFilter,
     filterValue,
-    setTxtSearch,
-    txtSearch,
-    carrinho,
-    setCarrinho,
+    txtSearch, setTxtSearch,
+    carrinho, setCarrinho,
+    ativarCarrinho, setAtivarCarrinho
   };
 
   return (

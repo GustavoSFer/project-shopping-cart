@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import MyContext from '../MyContext/MyContext';
 import ButtonCart from './ButtonCart';
 
 function Carrinho() {
   const [totalCarrinho, setTotelCarrinho] = useState(0);
   const [removido, setRemovido] = useState(false);
-  const carrinho = JSON.parse(localStorage.getItem('carrinho'));
+  const { carrinho, setCarrinho } = useContext(MyContext);
 
   const valorCarrinho = () => {
-    const soma = carrinho.reduce((acc, cur) => acc + cur.price, 0);
+    const cart = JSON.parse(localStorage.getItem('carrinho'));
+    const soma = cart.reduce((acc, cur) => acc + cur.price, 0);
     setTotelCarrinho(soma.toFixed(2));
   };
 
   const removeProduto = (item) => {
     const filtrarCarrinho = carrinho.filter((produto) => produto.id !== item.id);
     localStorage.setItem('carrinho', JSON.stringify([...filtrarCarrinho]));
+    setCarrinho(JSON.parse(localStorage.getItem('carrinho')));
+
     setRemovido(!removido);
   };
 
   useEffect(() => {
     valorCarrinho();
   }, [removido]);
+
+  useEffect(() => {
+    setCarrinho(JSON.parse(localStorage.getItem('carrinho')) || []);
+  }, []);
 
   return (
     <div className="carrinho-compras p-2">

@@ -5,9 +5,13 @@ import Button from './Button';
 import MyContext from '../MyContext/MyContext';
 
 function CardProduto({ item }) {
-  const { carrinho, setCarrinho } = useContext(MyContext);
+  const {
+    carrinho, setCarrinho, ativarCarrinho, setAtivarCarrinho,
+  } = useContext(MyContext);
 
   const addCart = (addProduto) => {
+    if (ativarCarrinho) setAtivarCarrinho(false);
+
     const filtrarCarrinho = carrinho.filter((produto) => produto.id !== addProduto.id);
     setCarrinho([...filtrarCarrinho, addProduto]);
 

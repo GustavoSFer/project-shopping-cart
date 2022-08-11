@@ -11,12 +11,18 @@ import MyContext from '../MyContext/MyContext';
 
 function Header() {
   const [ativarFiltro, setAtivarFiltro] = useState(false);
-  const [ativarCarrinho, setAtivarCarrinho] = useState(false);
   const {
-    setData, optionFilter, filterValue, setTxtSearch, txtSearch,
+    setData,
+    optionFilter,
+    filterValue,
+    setTxtSearch,
+    txtSearch,
+    ativarCarrinho,
+    setAtivarCarrinho,
   } = useContext(MyContext);
 
   const requestApi = async () => {
+    if (ativarCarrinho) setAtivarCarrinho(false);
     const result = await RequestGetApi(txtSearch);
     setData(result);
   };

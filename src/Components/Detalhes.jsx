@@ -7,7 +7,11 @@ import Header from './Header';
 
 function Detalhes() {
   const [produto, setProduto] = useState({});
-  const { carrinho, setCarrinho } = useContext(MyContext);
+  const {
+    carrinho, setCarrinho,
+    ativarCarrinho,
+    setAtivarCarrinho,
+  } = useContext(MyContext);
   const { id } = useParams();
 
   const api = async () => {
@@ -16,6 +20,8 @@ function Detalhes() {
   };
 
   const addCart = (addProduto) => {
+    if (ativarCarrinho) setAtivarCarrinho(false);
+
     const filtrarCarrinho = carrinho.filter((item) => item.id !== addProduto.id);
     setCarrinho([...filtrarCarrinho, addProduto]);
 
