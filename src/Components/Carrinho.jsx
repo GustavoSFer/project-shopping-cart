@@ -9,8 +9,10 @@ function Carrinho() {
 
   const valorCarrinho = () => {
     const cart = JSON.parse(localStorage.getItem('carrinho'));
-    const soma = cart.reduce((acc, cur) => acc + cur.price, 0);
-    setTotelCarrinho(soma.toFixed(2));
+    if (cart) {
+      const soma = cart.reduce((acc, cur) => acc + cur.price, 0);
+      setTotelCarrinho(soma.toFixed(2));
+    }
   };
 
   const removeProduto = (item) => {

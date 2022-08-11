@@ -38,7 +38,7 @@ function Cadastro() {
     <main className="container-login container position-absolute top-50 start-50 translate-middle">
       <div className="width-input-cadastro">
         <h1 className="txt-login">Cadastro</h1>
-        <div>
+        <section>
           <Input
             type="text"
             name="Nome"
@@ -74,7 +74,7 @@ function Cadastro() {
             msgErro
               && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
             }
-        </div>
+        </section>
         <Button click={handleClick} sty="w-100">Cadastrar</Button>
         <Button click={() => history('/')} sty="w-100">Voltar</Button>
       </div>

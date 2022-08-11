@@ -27,6 +27,7 @@ function App() {
   };
 
   const filterValue = async (filtro) => {
+    if (txtSearch === '') setTxtSearch('computador')
     const result = await RequestGetApi(txtSearch);
     const whichFilter = filtro.split('-');
     const value = [...result]

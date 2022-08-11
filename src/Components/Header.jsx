@@ -28,8 +28,8 @@ function Header() {
   };
 
   return (
-    <main>
-      <div className="shadow-lg d-flex justify-content-between height">
+    <header>
+      <nav className="shadow-lg d-flex justify-content-between height">
 
         <div className="logo">
           <a href="/loja"><img src={logo} alt="logo" /></a>
@@ -57,7 +57,7 @@ function Header() {
           </Button>
         </div>
 
-      </div>
+      </nav>
       {
         ativarFiltro && (
           <div className="border border-success d-flex justify-content-evenly">
@@ -139,7 +139,7 @@ function Header() {
         ativarCarrinho && <Carrinho />
       }
 
-    </main>
+    </header>
   );
 }
 

@@ -24,7 +24,7 @@ function Login() {
   return (
     <main className="container-login container position-absolute top-50 start-50 translate-middle">
       <h1 className="txt-login">Login</h1>
-      <div className="width-input-login">
+      <section className="width-input-login">
         <Input
           type="text"
           name="email"
@@ -42,7 +42,7 @@ function Login() {
         </p>
         <Button click={handleClick} sty="w-100">Entrar</Button>
         { msgErro && <p className="text-danger">E-mail ou senha incorreto!</p> }
-      </div>
+      </section>
       <p className="txt-cadastro">
         Não possui cadastro?
       </p>

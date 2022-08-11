@@ -19,7 +19,7 @@ function CardProduto({ item }) {
   };
 
   return (
-    <div className="col card-produto shadow m-2 bg-body rounded card-group">
+    <article className="col card-produto shadow m-2 bg-body rounded card-group">
       <div className="card">
         <Link to={`/detalhes/${item.id}`} item={item}>
           <img src={item.thumbnail} alt={item.title} className="card-img" />
@@ -38,7 +38,7 @@ function CardProduto({ item }) {
         </Link>
         <Button click={() => addCart(item)} sty="price btn-carrinho">Carrinho</Button>
       </div>
-    </div>
+    </article>
   );
 }
 

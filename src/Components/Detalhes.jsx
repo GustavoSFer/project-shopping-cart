@@ -37,8 +37,8 @@ function Detalhes() {
     <div>
 
       <Header />
-      <div className="card mb-3 card-detalhes">
-        <div className="row g-0">
+      <main className="card mb-3 card-detalhes">
+        <section className="row g-0">
           <div className="col-md-4 text-center mt-4">
             <img src={produto.thumbnail} className="img-fluid rounded-start" alt={produto.title} />
           </div>
@@ -54,8 +54,8 @@ function Detalhes() {
             </div>
           </div>
           <Button click={() => addCart(produto)} sty="">Adicionar ao carrinho</Button>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
