@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.color-app {
+  background-color: rgb(244, 241, 241);
+}
+
 .width-input-login {
   max-width: 300px;
   margin: auto;
@@ -42,6 +46,11 @@
 .width-input-cadastro {
   margin: auto;
   margin-bottom: 30px;
+}
+
+/* Header */
+.header-color {
+  background-color: rgb(240, 230, 230);
 }
 
 /* Loja */

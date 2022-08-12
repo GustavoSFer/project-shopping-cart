@@ -28,7 +28,7 @@ function Header() {
   };
 
   return (
-    <header>
+    <header className="header-color">
       <nav className="shadow-lg d-flex justify-content-between height">
 
         <div className="logo">

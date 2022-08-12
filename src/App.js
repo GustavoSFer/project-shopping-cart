@@ -52,7 +52,7 @@ function App() {
 
   return (
     <MyContext.Provider value={contextValue}>
-      <div className="">
+      <div className="color-app">
         <Routers />
       </div>
     </MyContext.Provider>
