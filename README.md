@@ -1,14 +1,12 @@
 # Boas vindas ao repositório - Aplicativo Shopping Cart
 https://GustavoSFer.github.io/project-shopping-cart
 
-## Habilidades
-  Nesse projeto, você será capaz de:
-
+## Habilidades:
   - Fazer requisições a uma API (Application Programming Interface) do Mercado Livre;
   - Utilizar JavaScript; CSS; HTML; React.js; Context Api;
   - Trabalhar com funções assíncronas;
 
-## Desenvolvimento
+## Desenvolvimento:
 Criar um carrinho de compras totalmente dinâmico! Consumindo dados diretamente de uma API do mercado livre para buscarmos produtos à venda.
 Listar os produtos e ter as opções de adicionar ao carrinho e remover.
 Conseguir realizar filtros de preços e busca por nome do produto;
@@ -28,6 +26,8 @@ Conseguir realizar filtros de preços e busca por nome do produto;
     * `npm install`
   * Inicialize o projeto:
     * `npm start` (uma nova página deve abrir no seu navegador)
+
+
 
 **⚠️ IMPORTANTE! ⚠️**
 

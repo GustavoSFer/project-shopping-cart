@@ -1,4 +1,4 @@
-import Routers from './Routes';
+import Routes from './Routes';
 import MyContext from './MyContext/MyContext';
 import { useEffect, useState } from 'react';
 import { RequestGetApi } from './RequestApi/RequestApi';
@@ -53,7 +53,7 @@ function App() {
   return (
     <MyContext.Provider value={contextValue}>
       <div className="color-app">
-        <Routers />
+        <Routes />
       </div>
     </MyContext.Provider>
   );
