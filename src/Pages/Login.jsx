@@ -15,6 +15,8 @@ function Login() {
 
   const handleClick = () => {
     if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
+      setEmail('');
+      setPassword('');
       history('/loja');
     } else {
       setMsgErro(true);
@@ -40,7 +42,7 @@ function Login() {
         <p className="min-password text-end">
           {`Caracteres minimo para senha: ${MIN_PASSWORD_LANGTH}`}
         </p>
-        <Button click={handleClick} sty="w-100">Entrar</Button>
+        <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Entrar</Button>
         { msgErro && <p className="text-danger">E-mail ou senha incorreto!</p> }
       </section>
       <p className="txt-cadastro">
