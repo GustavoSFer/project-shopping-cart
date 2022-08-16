@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 import Input from './Input';
 import logo from '../imagens/logo.png';
@@ -32,7 +33,7 @@ function Header() {
       <nav className="shadow-lg d-flex justify-content-between height">
 
         <div className="logo">
-          <a href="/loja"><img src={logo} alt="logo" /></a>
+          <Link to="/loja"><img src={logo} alt="logo" /></Link>
         </div>
 
         <div className="d-flex justify-content-between">
