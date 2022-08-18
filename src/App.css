@@ -4,7 +4,7 @@
 }
 
 .color-app {
-  background-color: rgb(244, 241, 241);
+  background-color: rgb(251, 247, 247);
 }
 
 .width-input-login {
@@ -50,7 +50,7 @@
 
 /* Header */
 .header-color {
-  background-color: rgb(240, 230, 230);
+  background-color: rgb(245, 242, 242);
 }
 
 /* Loja */
@@ -156,9 +156,13 @@
 }
 
 /* Card Produtos */
-.card-produto{
+.card-produto {
   max-width: 300px;
+  padding: 10px 5px;
+  border: 1px solid rgb(192, 185, 185);
+  border-radius: 10px;
 }
+
 .card-img {
   width: 55%;
   margin: auto;
@@ -232,6 +236,9 @@ a:hover {
   }
   .card-produto .price {
     font-size: 0.4em;
+  }
+  .section-loja {
+    margin: 2px !important;
   }
   .addCart {
     font-size: 0.5em;

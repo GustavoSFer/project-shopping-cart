@@ -61,12 +61,13 @@ function Header() {
       </nav>
       {
         ativarFiltro && (
-          <div className="border border-success d-flex justify-content-evenly">
-            <div>
-              <select className="form-select" onChange={(e) => optionFilter(e.target.value)}>
+          <div className="d-flex justify-content-evenly">
+            <div className="mt-2">
+              <p>Selecionar: Menor / Maior preço</p>
+              <select className="form-select text-center" onChange={(e) => optionFilter(e.target.value)}>
                 <option defaultValue="selecione">= Selecionar =</option>
-                <option value="menor">Menor preço</option>
-                <option value="maior">Maior preço</option>
+                <option value="menor"> &lt; - Menor preço</option>
+                <option value="maior"> &gt; - Maior preço</option>
               </select>
             </div>
 

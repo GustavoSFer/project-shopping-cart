@@ -19,24 +19,24 @@ function CardProduto({ item }) {
   };
 
   return (
-    <article className="col card-produto shadow m-2 bg-body rounded card-group">
-      <div className="card">
-        <Link to={`/detalhes/${item.id}`} item={item}>
-          <img src={item.thumbnail} alt={item.title} className="card-img" />
-          <div className="card-body">
-            <h1 className="title">
-              {`${item.title.slice(0, 20)}...`}
-            </h1>
-            <p className="price">
-              R$:
-              <span className="price-color">{Number(item.price).toFixed(2)}</span>
-            </p>
-          </div>
-          <div className="card-footer">
-            <Button sty="price btn-detalhe">Detalhes</Button>
-          </div>
-        </Link>
-        <Button click={() => addCart(item)} sty="price btn-carrinho">Carrinho</Button>
+    <article className="shadow m-2 bg-body card-produto text-center">
+      <Link to={`/detalhes/${item.id}`} item={item}>
+        <img src={item.thumbnail} alt={item.title} className="card-img" />
+        <div className="card-body">
+          <h1 className="title">
+            {`${item.title.slice(0, 20)}...`}
+          </h1>
+          <p className="price">
+            R$:
+            <span className="price-color">{Number(item.price).toFixed(2)}</span>
+          </p>
+        </div>
+        <div className="">
+          <Button sty="price btn-detalhe">Detalhes</Button>
+        </div>
+      </Link>
+      <div>
+        <Button click={() => addCart(item)} sty="price btn-carrinho w-100">Carrinho</Button>
       </div>
     </article>
   );

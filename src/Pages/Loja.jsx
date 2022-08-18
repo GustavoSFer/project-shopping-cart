@@ -9,7 +9,7 @@ function Loja() {
   return (
     <div>
       <Header />
-      <section className="row row-cols-2 row-cols-lg-4 m-3 text-center">
+      <section className="row row-cols-2 m-5 section-loja">
         {
           data.length > 0
             ? data.map((item) => <CardProduto item={item} key={item.id} />)
