@@ -25,19 +25,16 @@ describe('Verificando tela de login, se os elementos estão na tela', () => {
 });
 
 describe('Verificando comportamentos na tela de "login"', () => {
-  it(`Verificando se quando digitado o email e senha e clicado no botão 
-  "Entrar" é apagado as informações do input`, () => {
+  it(`Verificando se quando digitado o email e senha 
+  realmente aparece o que foi escrito`, () => {
     render(<App />);
-    const inputEmail = screen.getByRole('textbox');
-    // const inputPassword = screen.getByRole('textbox');
-    // const buttonEntrar = screen.getByTestId('btn-entrar');
+    const inputEmail = screen.getByTestId('email');
+    const inputPassword = screen.getByTestId('password');
 
     userEvent.type(inputEmail, 'gustavo@gmail.com');
-    console.log('>>>>', inputEmail);
-    // console.log('>>>>', inputPassword);
-    // userEvent.type(inputPassword, '3432fdsgsd');
-    // userEvent.click(buttonEntrar);
-
+    userEvent.type(inputPassword, '3432fdsgsd');
+    // Verificando se o valor esta correto.
     expect(inputEmail).toHaveValue('gustavo@gmail.com');
+    expect(inputPassword).toHaveValue('3432fdsgsd');
   });
 });
