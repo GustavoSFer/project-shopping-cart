@@ -2,6 +2,7 @@ import Routes from './Routes';
 import MyContext from './MyContext/MyContext';
 import { useEffect, useState } from 'react';
 import { RequestGetApi } from './RequestApi/RequestApi';
+import { HashRouter } from 'react-router-dom';
 
 function App() {
   const MIN_PASSWORD_LANGTH = 6;
@@ -9,10 +10,13 @@ function App() {
   const [txtSearch, setTxtSearch] = useState('');
   const [carrinho, setCarrinho] = useState([]);
   const [ativarCarrinho, setAtivarCarrinho] = useState(false);
+  const [loading, setLoading] = useState(false);
 
 
   const api = async (query = 'computador') => {
-    setData(await RequestGetApi(query))
+    setLoading(true);
+    setData(await RequestGetApi(query));
+    setLoading(false);
   };
 
   const optionFilter = (filter) => {
@@ -47,13 +51,16 @@ function App() {
     filterValue,
     txtSearch, setTxtSearch,
     carrinho, setCarrinho,
-    ativarCarrinho, setAtivarCarrinho
+    ativarCarrinho, setAtivarCarrinho,
+    loading,
   };
 
   return (
     <MyContext.Provider value={contextValue}>
       <div className="color-app">
-        <Routes />
+        <HashRouter>
+          <Routes />
+        </HashRouter>
       </div>
     </MyContext.Provider>
   );

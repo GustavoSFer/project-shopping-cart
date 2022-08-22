@@ -1,6 +1,7 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithRouter from '../renderWithRouter/renderWithRouter';
 import App from '../App';
 
 /* globals describe, expect, it */
@@ -36,5 +37,21 @@ describe('Verificando comportamentos na tela de "login"', () => {
     // Verificando se o valor esta correto.
     expect(inputEmail).toHaveValue('gustavo@gmail.com');
     expect(inputPassword).toHaveValue('3432fdsgsd');
+  });
+});
+
+describe('Redirecionamento de pagina', () => {
+  it('Verificando se quando clica em "Entrar" é redirecionado para /loja', () => {
+    renderWithRouter(<App />);
+    const inputEmail = screen.getByTestId('email');
+    const inputPassword = screen.getByTestId('password');
+    const btnEntrar = screen.getByTestId('btn-entrar');
+
+    userEvent.type(inputEmail, 'gustavo@gmail.com');
+    userEvent.type(inputPassword, '3432fdsgsd');
+    userEvent.click(btnEntrar);
+
+    const loading = screen.getByRole('heading', { level: 1 });
+    expect(loading).toBeInTheDocument();
   });
 });

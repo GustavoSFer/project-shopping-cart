@@ -4,11 +4,12 @@ import MyContext from '../MyContext/MyContext';
 import CardProduto from '../Components/CardProduto';
 
 function Loja() {
-  const { data } = useContext(MyContext);
+  const { data, loading } = useContext(MyContext);
 
   return (
     <div>
       <Header />
+      { loading && <h1>Loading ...</h1>}
       <section className="row row-cols-2 m-5 section-loja">
         {
           data.length > 0
