@@ -229,18 +229,18 @@ a:hover {
   }
 
   .card-produto .title {
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
   .card-produto {
     width: 43%;
   }
   .card-produto .price {
-    font-size: 0.4em;
+    font-size: 0.6em;
   }
   .section-loja {
     margin: 2px !important;
   }
   .addCart {
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 }
